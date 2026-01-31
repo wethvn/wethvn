@@ -28,7 +28,7 @@ export default function HomePage() {
             Bắt đầu
           </Link>
           <a
-            href="https://www.youtube.com/@eth34vn"
+            href="https://www.youtube.com/@wethvn"
             target="_blank"
             className="px-8 py-3 dark:bg-gray-800 bg-gray-300 dark:text-white text-black rounded-full w-fit lg:text-3xl hover:dark:bg-gray-700 hover:bg-gray-400"
           >
