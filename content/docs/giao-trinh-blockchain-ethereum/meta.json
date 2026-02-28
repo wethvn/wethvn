@@ -10,5 +10,5 @@
     "cryptography",
     "pectra-faq"
   ],
-  "defaultOpen": false
+  "defaultOpen": true
 }
