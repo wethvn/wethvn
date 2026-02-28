@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "giao-trinh-blockchain-ethereum",
+    "the-protocol",
+    "execution-client-el",
+    "consensus-layer-cl",
+    "development",
+    "testing-and-security",
+    "research",
+    "cryptography",
+    "pectra-faq"
+  ],
+  "defaultOpen": false
+}

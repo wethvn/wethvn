@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "overview",
+    "incidents",
+    "hive",
+    "kurtosis",
+    "formal-verification",
+    "consensus-spec-tests"
+  ],
+  "defaultOpen": false
+}

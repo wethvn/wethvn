@@ -1,13 +1,13 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import Image from "next/image";
-import { BookIcon, MessageCircleReply } from 'lucide-react';
+import { BookIcon, University } from 'lucide-react';
 
 export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
       title: (
         <Image
-          src="/weth.svg"
+          src="/wethvn.svg"
           alt="WETH"
           width={30}
           height={30}
@@ -24,9 +24,9 @@ export function baseOptions(): BaseLayoutProps {
         secondary: false,
       },
       {
-        icon: <MessageCircleReply />,
-        text: 'Bình luận',
-        url: '/tai-lieu/binh-luan',
+        icon: <University />,
+        text: 'Giáo trình',
+        url: '/tai-lieu/giao-trinh-blockchain-ethereum',
         // secondary items will be displayed differently on navbar
         secondary: false,
       },

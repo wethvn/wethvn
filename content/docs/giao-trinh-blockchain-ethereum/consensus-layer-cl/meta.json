@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "overview",
+    "cl-architecture",
+    "cl-networking",
+    "cl-specs",
+    "beacon-api",
+    "cl-clients",
+    "gasper",
+    "ssz",
+    "merkleization",
+    "syncing"
+  ],
+  "defaultOpen": false
+}

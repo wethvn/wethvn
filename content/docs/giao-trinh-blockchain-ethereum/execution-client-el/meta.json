@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "el-specs",
+    "el-architecture",
+    "block-production",
+    "transaction",
+    "json-rpc",
+    "devp2p",
+    "rlp",
+    "eof",
+    "evm",
+    "data-structures",
+    "el-data-structures-summary",
+    "precompiled-contracts",
+    "el-clients",
+    "besu",
+    "reth"
+  ],
+  "defaultOpen": false
+}

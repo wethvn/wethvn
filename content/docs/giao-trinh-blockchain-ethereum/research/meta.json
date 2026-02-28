@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "roadmap",
+    "eods",
+    "peerdas",
+    "fcr",
+    "preconfirmations",
+    "based-sequencing-preconfs",
+    "light-clients",
+    "eip-7702",
+    "ssf",
+    "cl-upgrades",
+    "pbs",
+    "mev",
+    "mev-boost",
+    "epbs",
+    "epbs-specs",
+    "et",
+    "pepc",
+    "ptc",
+    "tbhl",
+    "scaling",
+    "data-availability",
+    "core-changes",
+    "eip-4844"
+  ],
+  "defaultOpen": false
+}
