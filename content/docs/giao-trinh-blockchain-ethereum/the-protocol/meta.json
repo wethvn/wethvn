@@ -1,9 +1,9 @@
 {
   "pages": [
     "prehistory-of-ethereum",
-    "protocol-history-and-evolution",
     "protocol-architecture",
-    "protocol-design-philosophy"
+    "protocol-design-philosophy",
+    "protocol-history-and-evolution"
   ],
   "defaultOpen": false
 }

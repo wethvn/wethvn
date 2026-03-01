@@ -5,7 +5,9 @@ description: Giới thiệu về mật mã học trong giao thức Ethereum
 
 # Cryptography
 
-> :warning: This article is a [stub](https://en.wikipedia.org/wiki/Wikipedia:Stub), help the wiki by [contributing](/contributing.md) and expanding it.
+<Callout type="warn">
+This article is a [stub](https://en.wikipedia.org/wiki/Wikipedia:Stub), help the wiki by [contributing](/contributing.md) and expanding it.
+</Callout>
 
 Cryptography researchers craft the weapons or implements of change that developers use. They use advanced algebra to exploit the hard limits set by the universe on reality and craft cryptographic schemas that obey certain properties. They are in a sense reality-hackers. They hack reality to create systems that obey objective properties due to the underlying mathematics. 
 
@@ -20,7 +22,7 @@ Ethereum’s security model depends on carefully chosen cryptographic constructi
 
 Unlike account abstraction models (ERC-4337), EOAs require signatures for every operation.
 
-The v, r, s signature format has historical quirks—legacy transactions use v ∈ {27, 28}, while [EIP-155](https://eips.ethereum.org/EIPS/eip-155) defines v ∈ {0, 1} to prevent replay attacks.
+The $$v$$, $$r$$, $$s$$ signature format has historical quirks—legacy transactions use $$v ∈ \{27, 28\}$$, while [EIP-155](https://eips.ethereum.org/EIPS/eip-155) defines $$v ∈ \{0, 1\}$$ to prevent replay attacks.
 
 **Caveats:**
 
@@ -53,7 +55,7 @@ Implementation Nuances:
 
 Ethereum’s BLS spec (EIP-2335) enforces strict subgroup checks to avoid rogue-key attacks.
 
-Tools like <name>blst</name> and <name>herumi</name> optimize for different environments (e.g., x86 vs. ARM).
+Tools like blst and herumi optimize for different environments (e.g., x86 vs. ARM).
 
 4. ### Verkle Trees: A Shift in State Proofs
 **Current Limitation:** Merkle proofs for storage are too large (~1 KB per proof).

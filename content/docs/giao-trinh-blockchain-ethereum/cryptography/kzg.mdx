@@ -62,7 +62,7 @@ An analog clock illustrates modular arithmetic as hours cycle back after reachin
 
 A finite field of order prime $p$, we denote it by $\mathbb F_p$, is a special set of numbers, \{ $\{1, 2, 3, \ldots, p-1\}$ \},  where you can do all the usual math operations (addition, subtraction, multiplication, and division, except by zero) and still follow the rules of arithmetic. 
 
-The "order" of this set is the number of elements it contains, and for a finite field of order prime $p$, this number is a prime number. The most common way to create a $\mathbb F_p$ is by taking the set of all integers greater than or equal to $0$ and dividing them by $p$, keeping only the remainders. This gives us a set of numbers from $0$ to $p-1$ that can be used for arithmetic operations. For example, if $p = 5$, the set would be {0, 1, 2, 3, 4}, and you can add, subtract, multiply, and divide these numbers in a way that follows the rules of arithmetic. This set is a finite field of order 5, we denote this by $\mathbb F_5$, because it has exactly 5 elements, and it's a prime number.
+The "order" of this set is the number of elements it contains, and for a finite field of order prime $p$, this number is a prime number. The most common way to create a $\mathbb F_p$ is by taking the set of all integers greater than or equal to $0$ and dividing them by $p$, keeping only the remainders. This gives us a set of numbers from $0$ to $p-1$ that can be used for arithmetic operations. For example, if $p = 5$, the set would be $$\{0, 1, 2, 3, 4\}$$, and you can add, subtract, multiply, and divide these numbers in a way that follows the rules of arithmetic. This set is a finite field of order 5, we denote this by $\mathbb F_5$, because it has exactly 5 elements, and it's a prime number.
 
 When we do modular arithmetic operations in the finite field $\mathbb F_p$, we have a nice "wrap around" property i.e. the field behaves as if it "wraps around" after reaching $(p - 1)$. 
 
@@ -84,11 +84,11 @@ In mathematical sense, if you have a group ($\mathbb G, .)$  and an element $g$ 
 
 This concept is best explained with an example.
 
-We will work with ($\mathbb G_7, +)$ of group elements \{ ${0,1,2,3,4,5,6}$ \} and ($\mathbb G^*_7, .)$  of group elements \{ ${1,2,3,4,5,6}$ \} with modulo $7$ to find the generator of the Groups.
+We will work with ($\mathbb G_7, +)$ of group elements $$\{0,1,2,3,4,5,6\}$$ and ($\mathbb G^*_7, .)$  of group elements $$\{1,2,3,4,5,6\}$$ with modulo $7$ to find the generator of the Groups.
 
 **Generator of Additive Group**
 
-Our set ($\mathbb G_7, +)$ with elements \{ ${0,1,2,3,4,5,6}$ \} is a Group because it satisfies the definition of a Group.
+Our set ($\mathbb G_7, +)$ with elements $$\{0,1,2,3,4,5,6\}$$ is a Group because it satisfies the definition of a Group.
 
 - **Closure:** When you add any two numbers in the set and take the remainder when divided by $7$, you end up with a result that's still in the set.
 - **Associativity:** For any numbers $a, b$ and $c$ in the set, $(a+b)+c$ is always the same as $a+(b+c)$, even with modulo $7$.
@@ -110,7 +110,7 @@ As you can see, by repeatedly adding $1$ modulo $7$, we can generate every other
 
 
 **Generator of Multiplicative Group**
-For the multiplicative group of integers modulo a prime $p$, the group ($\mathbb G_p, .$) consists of the integers \{ ${1, 2, 3, \ldots, p-1}$ \}, where the operation is multiplication modulo $p$. We'll choose a small prime to make it simple, say $p = 7$. So, our group ($\mathbb G^*_7, .)$ under multiplication modulo $7$ consists of the elements \{ ${1, 2, 3, 4, 5, 6}$ \}. Remember, division by zero element is excluded, that's why we have `*` in the notation.
+For the multiplicative group of integers modulo a prime $p$, the group ($$\mathbb G_p, .$$) consists of the integers $$\{1, 2, 3, ldots, p-1\}$$, where the operation is multiplication modulo $p$. We'll choose a small prime to make it simple, say $p = 7$. So, our group ($\mathbb G^*_7, .)$ under multiplication modulo $7$ consists of the elements $$\{1, 2, 3, 4, 5, 6\}$$. Remember, division by zero element is excluded, that's why we have `*` in the notation.
 
 Here's the group structure:
 
@@ -140,9 +140,9 @@ You can verify that $5$ is also a generator for our multiplicative group ($\math
 ### Why Primes for Modulo Operations in Fields
 Choosing a prime number as the modulus for operations in a finite field offers several benefits and simplifies various aspects of field arithmetic:
 
-1. **Well-defined Division:** In a finite field, every non-zero element must have a multiplicative inverse. If the modulus is prime, every number in the set \{ ${1, 2, 3, \ldots, p-1}$ \} has a multiplicative inverse modulo $p$. This property allows for well-defined division operations within the field, which wouldn't be possible if the modulus wasn't prime (except in special cases like Galois fields of order $p^n$, where $p$ is prime).
+1. **Well-defined Division:** In a finite field, every non-zero element must have a multiplicative inverse. If the modulus is prime, every number in the set $$\{1, 2, 3, ldots, p-1\}$$ has a multiplicative inverse modulo $p$. This property allows for well-defined division operations within the field, which wouldn't be possible if the modulus wasn't prime (except in special cases like Galois fields of order $p^n$, where $p$ is prime).
 
-2. **Simplicity of Construction:** When the modulus is a prime number, the field's construction is straightforward. The elements of the field are simply the set of integers \{ ${1, 2, 3, \ldots, p-1}$ \}, and the field operations (addition, subtraction, multiplication, and division) are performed modulo $p$. For non-prime moduli, constructing a field requires more complex structures, such as polynomial rings.
+2. **Simplicity of Construction:** When the modulus is a prime number, the field's construction is straightforward. The elements of the field are simply the set of integers $$\{1, 2, 3, ldots, p-1}$$, and the field operations (addition, subtraction, multiplication, and division) are performed modulo $p$. For non-prime moduli, constructing a field requires more complex structures, such as polynomial rings.
 
 3. **Guaranteed Field Properties:** The use of a prime modulus guarantees the satisfaction of required field properties. These include - the existence of additive and multiplicative identities, the existence of additive and multiplicative inverses for every element, and the commutative, associative, and distributive laws for addition and multiplication. A prime modulus ensures all these properties are met.
 
@@ -312,15 +312,15 @@ To simplify this step, Prover picks a polynomial $f(x) \in \mathbb{F}_p[x]$, the
 ### Commitment of the Polynomial
 Say, the commitment of the polynomial $f(x)$ is denoted as $C_f$. The commitment is like hash function. 
 
-So $C_f = {f(a)} \cdot g  = {(f_0 + f_1a + f_2a^2 + \ldots + f_ta^t)} \cdot g$. Here $f(a)$ is the polynomial evaluated at $x=a$.
+So $$C_f = {f(a)} \cdot g  = {(f_0 + f_1a + f_2a^2 + ldots + f_ta^t)} \cdot g$$. Here $$f(a)$$ is the polynomial evaluated at $$x=a$$.
 
 Though, the Prover doesn't know $a$, he or she can still compute the commitment of the polynomial at $x=a$.
 
-So we have, $C_f = {f(a)} \cdot g  = {(f_0 + f_1a + f_2a^2 + \ldots + f_ta^t)} \cdot g$.
+So we have, $$C_f = {f(a)} \cdot g  = {(f_0 + f_1a + f_2a^2 + ldots + f_ta^t)} \cdot g$$.
 
-$C_f =  {f_0} \cdot g + {f_1a} \cdot g + {f_2a^2} \cdot g + \ldots + {f_ta^t} \cdot g $.
+$$C_f =  {f_0} \cdot g + {f_1a} \cdot g + {f_2a^2} \cdot g + ldots + {f_ta^t} \cdot g $$.
 
-$C_f =  {f_0} \cdot g +  {f_1} \cdot (ag) + {f_2} \cdot ({a^2}g) + \ldots  + {f_t} \cdot ({a^t}g)$.
+$$C_f =  {f_0} \cdot g +  {f_1} \cdot (ag) + {f_2} \cdot ({a^2}g) + ldots  + {f_t} \cdot ({a^t}g)$$.
 
 From the CRS, the Prover knows these values < $g, {a^1}.g, {a^2}.g, \ldots, {a^t}.g$ >, he or she can compute this value as commitment of the polynomial, $C_f$ and sends to the Verifier.
 
@@ -439,7 +439,7 @@ Now, let us practically derive the steps in KZG protocol using a small finite fi
 
 ### KZG by Hands - Initial Configuration
 - We will work with the finite field $(\mathbb F_{11}, + )$. So, the prime order $p = 11$. This means all finite field operations are done modulo 11. 
-- The finite field set is {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. 
+- The finite field set is $$\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}$$. 
 - The generator $g = 2$ in $(\mathbb G_{11}, +)$. 
 - This means that the group operation is addition with modulo 11.
 - The Prover selects the polynomial $f(x) = 3x^2 + 5x + 7$. 
@@ -463,7 +463,7 @@ Now, let us practically derive the steps in KZG protocol using a small finite fi
 - The Verifier asks the Prover to open the polynomial at $x = 1$.
 - The Prover computes the Quotient polynomial $Q(x) = \frac{f(x) - f(1)}{x - 1} = \frac{f(x) - d}{x - b}$.
 - Compute $f(1) = d = 3.1^2 + 5.1 + 7 = 4$ (mod $11$).
-- $Q(x) = \frac{3x^2 + 5x + 7 - 4}{x - 1} = \frac{3x^2 + 5x + 3}{x - 1}$.
+- $$Q(x) = \frac\{3x^2 + 5x + 7 - 4}{x - 1} = \frac\{3x^2 + 5x + 3}{x - 1}$$.
 - Divide the Leading Term: $3x^2$ divided by $x$ gives us $3x$. We write $3x$ above the division bar.
 - Multiply the Divisor by the Quotient's Leading Term: Multiply $x - 1$ by $3x$ to get $3x^2 - 3x$.
 - Subtract from the Polynomial: Subtract $3x^2 - 3x$ from $3x^2 + 5x$ to get $8x$.
@@ -558,7 +558,7 @@ $e(C_f - C_R, g) = e(C_Q, C_P)$
 where $C_P = P(a) \cdot g$. Given this, the Verifier can confirm the truth of the equality, thereby verifying the proof.
 
 
-## [References](#references)
+## References
 [^1]: https://en.wikipedia.org/wiki/Polynomial_remainder_theorem
 [^2]: https://github.com/ethereum/kzg-ceremony 
 [^3]: https://www.rareskills.io/post/bilinear-pairing

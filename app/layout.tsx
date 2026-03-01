@@ -1,5 +1,6 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import './global.css';
+import 'katex/dist/katex.css';
 import type { Metadata } from "next";
 // Vietnamese font
 import { Be_Vietnam_Pro } from "next/font/google";

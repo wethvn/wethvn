@@ -23,7 +23,7 @@ $$e: G_1 \times G_2 \rightarrow G_T$$
 
 This function is efficiently computable and must satisfy bilinear properties:
 
-- For all $P,Q$ in $G_1$ and $a$ in integers, bilinearity is defined as:
+- For all $$P,Q$$ in $$G_1$$ and $$a$$ in integers, bilinearity is defined as:
   $$e(aP, Q) = e(P, Q)^a$$
   $$e(P, aQ) = e(P, Q)^a$$
 
@@ -44,7 +44,7 @@ _Please note: While BLS signatures themselves do not require a random nonce for 
 #### Example of BLS Signature Generation and Verification:
 
 
-![Diagram showing key pair generation and verification for BLS](../../images/elliptic-curves/bls-alice.png)
+![Diagram showing key pair generation and verification for BLS](img/bls-alice.png)
 
 
 
@@ -94,7 +94,7 @@ Signature:
 
 ### Aggregation in BLS:
 
-A major advantage of BLS is the ability to aggregate multiple signatures into a single compact signature. This is particularly useful in scenarios involving multiple transactions or signers, greatly reducing the blockchain space and computational power needed for verifications. For example if there are 100 transactions, where signature for each one is represented by $S_i$ and each are associated with a public key of $P_i$ (and a message $M_i$), rather than storing 100 separate signatures, BLS allows combining them into one:
+A major advantage of BLS is the ability to aggregate multiple signatures into a single compact signature. This is particularly useful in scenarios involving multiple transactions or signers, greatly reducing the blockchain space and computational power needed for verifications. For example if there are 100 transactions, where signature for each one is represented by $$S_i$$ and each are associated with a public key of $$P_i$$ (and a message $$M_i$$), rather than storing 100 separate signatures, BLS allows combining them into one:
 
 $$S = S_1 + S_2 + \ldots + S_{100}$$
 
@@ -116,15 +116,15 @@ There are **4** component pieces of data within the BLS digital signature proces
 - **The message:** In Ethereum, messages consist of byte strings whose structure and purpose will be explored in further detail later in the context. Initially, understand these messages as basic data units processed within the blockchain protocol.
 - **The signature:** The signature is the result of the cryptographic process where the message is combined with the secret key. This signature uniquely identifies that a message was authored by the holder of the secret key. By verifying the signature with the corresponding public key, one can confirm that the message originated from a specific validator and has not been altered post-signing.
 
-In Mathematical terms, we use 2 subgroups of BLS12-381 elliptic curve: $G_1$ defined over a base field $F_q$, and $G_2$ defined over the field extension $F_{q^2}$. The order of both the subgroups is $r$, a 77 digit prime number. The (arbitrarily chosen) generator of $G_1$ is $g_1$, and of $G_2$ is $g_2$.
+In Mathematical terms, we use 2 subgroups of BLS12-381 elliptic curve: $$G_1$$ defined over a base field $$F_q$$, and $$G_2$$ defined over the field extension $$F_{q^2}$$. The order of both the subgroups is $$r$$, a 77 digit prime number. The (arbitrarily chosen) generator of $$G_1$$ is $$g_1$$, and of $$G_2$$ is $$g_2$$.
 
-1. The secret key, $sk$, is a number between $1$ and $r$ (technically the range includes $1$, but not $r$. However, very small values of $sk$ would be hopelessly insecure).
-2. The public key, $pk$, is $[sk]g_1$ where the square brackets represent scalar multiplication of the elliptic curve group point. The public key is therefore a member of the $G_1$ group.
-3. The message, $m$ is a sequence of bytes. During the signing process this will be mapped to some point $H(m)$ that is a member of the $G_2$ group.
-4. The signature, $\sigma$, is also a member of the $G_2$ group, namely $[sk]H(m)$.
+1. The secret key, $$sk$$, is a number between $$1$$ and $$r$$ (technically the range includes $$1$$, but not $$r$$. However, very small values of $$sk$$ would be hopelessly insecure).
+2. The public key, $$pk$$, is $$[sk]g_1$$ where the square brackets represent scalar multiplication of the elliptic curve group point. The public key is therefore a member of the $$G_1$$ group.
+3. The message, $$m$$ is a sequence of bytes. During the signing process this will be mapped to some point $$H(m)$$ that is a member of the $$G_2$$ group.
+4. The signature, $$\sigma$$, is also a member of the $$G_2$$ group, namely $$[sk]H(m)$$.
 
 
-![Diagram showing how we will depict the various components in the diagrams below.](../../images/elliptic-curves/bls-key.svg)
+![Diagram showing how we will depict the various components in the diagrams below.](img/bls-key.svg)
 
 _The key to the keys. This is how we will depict the various components in the diagrams below. Variants of the same object are hatched differently. The secret key is mathematically a scalar; public keys are_ $G_1$ _group members; message roots are mapped to_ $G_2$ _group members; and signatures are $G_2$ group members._
 
@@ -135,12 +135,12 @@ A key pair is a secret key along with its public key. Together these irrefutably
 
 Each validator is equipped with at least 1 primary "signing key" used for routine operations like creating blocks, making attestations etc. Depending on their withdrawal credentials, a validator may also have a secondary "withdrawal key," which is stored offline for added security.
 
-The secret key should be randomly generated within the range $[1,r)$, adhering to the [EIP-2333](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2333.md) standard, which recommends using the [`KeyGen`](https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-04#section-2.3) method from the draft IRTF BLS signature standard. Although compliance with this method is not mandatory, deviating from it is generally discouraged. Most stakers generate their keys using the [`eth2.0-deposit-cli`](https://github.com/ethereum/eth2.0-deposit-cli) tool from the Ethereum Foundation. For security, key pairs are typically stored in password-protected [EIP-2335](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md) keystore files.
+The secret key should be randomly generated within the range $$[1,r)$$, adhering to the [EIP-2333](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2333.md) standard, which recommends using the [`KeyGen`](https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-bls-signature-04#section-2.3) method from the draft IRTF BLS signature standard. Although compliance with this method is not mandatory, deviating from it is generally discouraged. Most stakers generate their keys using the [`eth2.0-deposit-cli`](https://github.com/ethereum/eth2.0-deposit-cli) tool from the Ethereum Foundation. For security, key pairs are typically stored in password-protected [EIP-2335](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md) keystore files.
 
 The secret key, $sk$, is a 32-byte unsigned integer. The public key, $pk$, is represented as a point on the $G_1$ curve and serialized in a compressed format as a 48-byte string within the protocol.
 
 
-![Diagram of the generation of the public key.](../../images/elliptic-curves/bls-setup.svg)
+![Diagram of the generation of the public key.](img/bls-setup.svg)
 
 _A validator randomly generates its secret key. Its public key is then derived from that._
 
@@ -161,7 +161,7 @@ $$
 
 The signature $\sigma$ thus generated is also part of the $G_2$ group and is typically compressed into a 96-byte string for practical use.
 
-![Diagram of signing a message.](../../images/elliptic-curves/bls-signing.svg)
+![Diagram of signing a message.](img/bls-signing.svg)
 
 
 _A validator uses their secret key to sign a message, producing a unique digital signature_
@@ -186,17 +186,8 @@ $$
 
 This checks whether the message signed with the secret key $sk$ matches the observed signature $\sigma$, using the fundamental properties of [pairings](/wiki/Cryptography/bls#how-bls-works).
 
-<figure class="diagram" style="margin-left:10%; width:80%">
-
-![Diagram of verifying a signature.](../../images/elliptic-curves/bls-verifying.svg)
-
-<figcaption>
-
+![Diagram of verifying a signature.](img/bls-verifying.svg)
 _Verification uses the validator's public key and the original message to confirm the authenticity of the signature._
-
-</figcaption>
-
-</figure>
 
 **Verification Output**: The process returns `True` if the signature aligns with both the public key and the message, confirming its validity. If not, it returns `False`, indicating issues with the signature’s integrity or origin.
 

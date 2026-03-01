@@ -2,8 +2,8 @@
   "pages": [
     "giao-trinh-blockchain-ethereum",
     "the-protocol",
-    "execution-client-el",
-    "consensus-layer-cl",
+    "execution-client",
+    "consensus-layer",
     "development",
     "testing-and-security",
     "research",
