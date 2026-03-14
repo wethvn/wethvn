@@ -2,9 +2,11 @@
   "pages": [
     "index",
     "vai-tro-cua-blockchain",
+    "moc-thoi-gian-lich-su",
     "tai-khoan",
     "tai-san-ma-hoa",
     "hop-dong-thong-minh",
+    "trach-nhiem-cua-ethereum-foundation",
     "giao-trinh-blockchain-ethereum"
   ],
   "defaultOpen": false
